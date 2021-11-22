@@ -1,5 +1,5 @@
 const http= require('http');
-const TodoList= require('./lib');
+const lib= require('./lib');
 
 const hostname = '127.0.0.1';
 const port = 8080;
@@ -11,17 +11,20 @@ const todos=[
     {id:4,label:'Implement new feature'},
 ]
 
+console.log(new lib.TodoList())
 
 const server = http.createServer(function(req,res){
     // processing 
+    let toDoList=new lib.TodoList();
+    toDoList.addElementToList(  {id:1,label:'email parcing'});
+    toDoList. addElementToList( {id:2,label:'Write todos for the day'});
     res.statusCode=301;
-    res.setHeader('Content-Type','text/html');
+    res.setHeader('Content-Type','application/json');
     res.setHeader('token','mean-stack');
     if(res.statusCode===404)
-        res.end("<h1>Error :( Notfound </h1>")
-    else{
-        let body=`Hello`
-        res.end(`<html><body>${body}</body></html>`);
+        res.end("{'Error' :'( Notfound </h1>'}")
+    else{ 
+        res.end(`${JSON.stringify(toDoList._list)}`);
     }
   
 });
