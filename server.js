@@ -3,20 +3,25 @@ const http= require('http');
 const hostname = '127.0.0.1';
 const port = 8080;
 
+const todos=[
+    {id:1,label:'email parcing'},
+    {id:2,label:'Write todos for the day'},
+    {id:3,label:'Review yesterday code'},
+    {id:4,label:'Implement new feature'},
+]
+
+
 const server = http.createServer(function(req,res){
     // processing 
-    res.statusCode=200;
+    res.statusCode=301;
     res.setHeader('Content-Type','text/html');
-    res.end(`<html>
-    <body>
-                <pre>
-                <code>
-                    ${req.method}
-                    </code>
-                </pre>
-                    <h1 style="color:blue;">Hello World from my Node Server</h1>
-                    </body>
-            </html>`);
+    res.setHeader('token','mean-stack');
+    if(res.statusCode===404)
+        res.end("<h1>Error :( Notfound </h1>")
+    else{
+        let body=``
+        res.end(`<html><body>${body}</body></html>`);
+    }
   
 });
 
