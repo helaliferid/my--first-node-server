@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start":"nodemon server.js",
+    "heritage":"nodemon inheritance.js",
     "test": "jest"
   },
   "keywords": [
