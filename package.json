@@ -6,6 +6,7 @@
   "scripts": {
     "start":"nodemon server.js",
     "heritage":"nodemon inheritance.js",
+    "pl":"nodemon polymorphisme.js",
     "test": "jest"
   },
   "keywords": [
