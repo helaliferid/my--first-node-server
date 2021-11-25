@@ -7,6 +7,7 @@
     "start":"nodemon server.js",
     "heritage":"nodemon inheritance.js",
     "pl":"nodemon polymorphisme.js",
+    "fsm":"nodemon fs.module.js",
     "test": "jest"
   },
   "keywords": [
