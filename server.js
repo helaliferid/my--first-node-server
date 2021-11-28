@@ -6,17 +6,17 @@ const hostname = '127.0.0.1';
 const port = 8080;
 
 const todos=[
-    {id:1,label:'email parcing'},
-    {id:2,label:'Write todos for the day'},
-    {id:3,label:'Review yesterday code'},
-    {id:4,label:'Implement new feature'},
+    {id:1,label:'email parcing',isDone:false},
+    {id:2,label:'Write todos for the day',isDone:false},
+    {id:3,label:'Review yesterday code',isDone:false},
+    {id:4,label:'Implement new feature',isDone:false},
 ]
 
-console.log(new lib.TodoList())
+//console.log(new lib.TodoList())
 
 const server = http.createServer(function(req,res){
     //handle request data
-    let _url=parser.parse(req.url);
+    let _url=parser.urlWithStringQuery(req.url);
     
     // processing 
     let toDoList=new lib.TodoList();
