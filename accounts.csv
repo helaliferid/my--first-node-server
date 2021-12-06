@@ -1,0 +1,4 @@
+code_account, label_account, class_accounting
+411000      , Clients      , 4 Tiers
+401000      , Fournisseurs , 4 Tiers
+530000      , Caisse       , 5 Trésorerie
